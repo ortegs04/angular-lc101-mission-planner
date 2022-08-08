@@ -6,3 +6,15 @@
 h3 {
     text-align: center;
 }
+
+li:hover {
+    cursor: pointer;
+}
+
+.selectedTest {
+    color: rgb(122, 180, 46);
+}
+
+.buttonOn {
+    background-color: goldenrod;
+}

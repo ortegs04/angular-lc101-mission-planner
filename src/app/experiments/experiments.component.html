@@ -1,7 +1,26 @@
 <div class="displayBox">
-    <h3>Possible Experiments</h3>
-    <ul>
-      <li *ngFor="let experiment of experiments">{{experiment}}</li>
-    </ul>
+  <h3>Possible Experiments</h3>
+  <ul>
+    <li [class.selectedTest]="experimentList.includes(experiment)" 
+        *ngFor="let experiment of experiments" 
+        (click)="addExperiment(experiment)">
+        <span>
+          <button [class.buttonOn]="!experimentList.includes(experiment) && experimentList.length !== 4">Add Test</button>
+        </span>
+        {{experiment}}
+    </li>
+  </ul>
 </div>
 <hr>
+<div class="displayBox">
+<h3>Experiment <span *ngIf="experimentList.length === 4">List Full</span></h3>
+<ol>
+  <li *ngFor="let test of experimentList">
+    {{test}}
+    <span>
+      <button (click)="removeTest(test)">remove</button>
+    </span>
+  </li>
+</ol>
+<button (click)="clearList()">Empty List</button>
+</div>

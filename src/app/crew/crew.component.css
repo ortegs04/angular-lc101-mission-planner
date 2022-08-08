@@ -20,3 +20,11 @@ h3 {
 }
 
 /* Add a 'selected' class here to style selected astronaut names a different color. */
+.selected {
+    color:rgb(35, 192, 140);
+}
+
+.bonus {
+    text-align: center;
+    font-size: 15px;
+}
